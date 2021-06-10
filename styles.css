@@ -1,1 +1,42 @@
-/*Maak hier jouw CSS!*/
+.container {
+display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 50px 190px auto 50px;
+    grid-template-areas:
+    "area-a" "area-c" "area-c"
+    "area-b" "area-c" "area-c"
+    "area-b" "area-e" "area-d"
+    "area-f" "area-f" "area-f";
+}
+
+div {
+    display: flex;
+    justify-content: center;
+    background-color: darkred;
+    color: white;
+}
+
+.section-a {
+    grid-area: area-a;
+}
+
+.section-b {
+    grid-area: area-b;
+}
+
+.section-c {
+    grid-area: area-c;
+}
+
+.section-d {
+    grid-area: area-d;
+}
+
+.section-e {
+    grid-area: area-e;
+}
+
+.section-f {
+    grid-area: area-f;
+}
+

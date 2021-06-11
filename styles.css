@@ -2,7 +2,7 @@
 display: grid;
     /*grid-template-columns: [column-1] auto [column-2] auto [column-3] auto;*/
     grid-template-rows: 50px 190px auto 50px;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: 1fr 1fr 1fr;
     column-gap: 10px;
     row-gap: 10px;
     background-color: beige;
@@ -38,9 +38,8 @@ div {
 
 .section-d {
     grid-area: area-d;
-    align-self: start;
     min-height: 100px;
-    align-items: stretch;
+    height: auto;
 }
 
 .section-e {
@@ -51,6 +50,11 @@ div {
     grid-area: area-f;
 }
 
+.section-x {
+    grid-area: area-x;
+    display: none;
+}
+
 p {
     margin: auto;
 }
@@ -59,6 +63,31 @@ p {
     margin: 15px
 }
 
-@media screen and (min-width: 576px) {
+@media (max-width: 576px) {
+    .container {
+        grid-template-rows: 50px auto 50px 50px 50px 50px 50px;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+                "area-a"
+                "area-b"
+                "area-c"
+                "area-d"
+                "area-e"
+                "."
+                "area-f";
+    }
 
+    .section-b {
+        grid-area: area-b;
+        height: auto;
+    }
+
+    .section-x {
+        grid-area: area-x;
+    }
+
+    .section-d {
+        grid-area: area-d;
+        min-height: initial;
+    }
 }
